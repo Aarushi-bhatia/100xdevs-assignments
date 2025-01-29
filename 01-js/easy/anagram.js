@@ -5,7 +5,26 @@
 */
 
 function isAnagram(str1, str2) {
+  if(str1.length != str2.length){
+    return false;
+  }
 
+  str1 = str1.toLowerCase();
+  str2 = str2.toLowerCase();
+
+  let arr1 = str1.split("").sort();
+  let arr2 = str2.split("").sort();
+
+  function checkIf(a, b){
+    for(let i = 0; i < a.length; i++){
+      if(a[i] != b[i]){
+        return false;
+      }
+    }
+    return true;
+  }
+  let ans = checkIf(arr1, arr2);
+  return ans;
 }
 
 module.exports = isAnagram;
