@@ -31,3 +31,6 @@ function kidneyMiddleware(req, res, next){
 app.get('/health-checkup', userMiddleware, kidneyMiddleware, function(req, res){
   res.send("You are healthy!");
 })
+
+//app.use(calculateRequests) is a middleware which is called in every fn.
+//app.use() takes a middleware as input
