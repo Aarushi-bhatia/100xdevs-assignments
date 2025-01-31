@@ -34,3 +34,15 @@ app.get('/health-checkup', userMiddleware, kidneyMiddleware, function(req, res){
 
 //app.use(calculateRequests) is a middleware which is called in every fn.
 //app.use() takes a middleware as input
+
+/*
+Global catches help you give the user a Better error message
+
+Error-Handling Middleware: This is a special type of middleware function in Express that has four arguments instead of three (err, req, res, next). Express recognizes it as an error-handling middleware because of these four arguments.
+
+app.use(function(err, req, res, next){
+  res.json({
+    msg: "Sorry something is up with your server"
+  })
+})
+*/
